@@ -1,0 +1,380 @@
+/* =========================================================
+   FEIRA DA LUA - ESTÉTICA DARK AERO (GLASS & AQUA GEL)
+   ========================================================= */
+
+:root {
+    color-scheme: dark;
+    --aero-deep: #031019;
+    --aero-ocean: #062132;
+    --aero-aqua: #00d2ff;
+    --aero-emerald: #10b981;
+    --aero-mint: #6ee7b7;
+    --aero-glass-top: rgba(255, 255, 255, 0.16);
+    --aero-glass-mid: rgba(10, 42, 62, 0.62);
+    --aero-glass-bot: rgba(4, 20, 32, 0.84);
+    --aero-border: rgba(125, 211, 252, 0.34);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', 'Inter', 'Trebuchet MS', sans-serif;
+    background-color: var(--aero-deep);
+    color: #f0f9ff;
+    overflow-x: hidden;
+    margin: 0;
+}
+
+.font-mono-y2k {
+    font-family: 'Segoe UI', 'Inter', sans-serif;
+    font-variant-numeric: tabular-nums;
+    letter-spacing: 0.02em;
+}
+
+/* =========================================================
+   FUNDO DARK AERO (AURORA OCEÂNICA + BOKEH LUMINOSO)
+   ========================================================= */
+#space-canvas {
+    position: fixed;
+    inset: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: -2;
+    opacity: 0.55;
+    filter: hue-rotate(-15deg) saturate(1.4);
+}
+
+.nebula-bg {
+    position: fixed;
+    inset: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: -3;
+    background:
+        radial-gradient(ellipse at 18% 12%, rgba(0, 210, 255, 0.28) 0%, transparent 48%),
+        radial-gradient(ellipse at 82% 22%, rgba(16, 185, 129, 0.22) 0%, transparent 45%),
+        radial-gradient(ellipse at 72% 85%, rgba(6, 182, 212, 0.26) 0%, transparent 52%),
+        radial-gradient(ellipse at 25% 80%, rgba(14, 165, 233, 0.18) 0%, transparent 50%),
+        linear-gradient(170deg, #020b12 0%, #052235 48%, #031521 100%);
+}
+
+/* Substitui o grid retrô por esferas de luz Bokeh estilo Frutiger Aero */
+.y2k-grid {
+    position: fixed;
+    inset: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: -1;
+    background-image:
+        radial-gradient(circle at 12% 30%, rgba(255, 255, 255, 0.08) 0px, rgba(56, 189, 248, 0.05) 45px, transparent 48px),
+        radial-gradient(circle at 86% 65%, rgba(110, 231, 183, 0.09) 0px, rgba(16, 185, 129, 0.04) 65px, transparent 68px),
+        radial-gradient(circle at 48% 18%, rgba(186, 230, 253, 0.07) 0px, rgba(14, 165, 233, 0.03) 35px, transparent 38px),
+        radial-gradient(circle at 30% 75%, rgba(255, 255, 255, 0.06) 0px, rgba(56, 189, 248, 0.03) 55px, transparent 58px);
+}
+
+/* =========================================================
+   CABEÇALHO E ABAS EM VIDRO AERO
+   ========================================================= */
+.glass-header {
+    background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.14) 0%, rgba(255, 255, 255, 0.03) 48%, rgba(3, 18, 28, 0.88) 50%, rgba(4, 24, 38, 0.94) 100%);
+    backdrop-filter: blur(20px) saturate(170%);
+    -webkit-backdrop-filter: blur(20px) saturate(170%);
+    border-bottom: 1px solid rgba(125, 211, 252, 0.42);
+    box-shadow: 0 8px 28px rgba(0, 6, 14, 0.65), inset 0 1px 0 rgba(255, 255, 255, 0.35);
+}
+
+header nav button {
+    cursor: pointer;
+    border-radius: 9999px !important;
+    transition: all 0.25s ease;
+}
+
+/* =========================================================
+   CARDS TRANSLÚCIDOS DARK AERO (REFLEXO DIAGONAL + CHANFRO)
+   ========================================================= */
+.glass-card {
+    background:
+        linear-gradient(155deg, var(--aero-glass-top) 0%, rgba(255, 255, 255, 0.04) 32%, var(--aero-glass-mid) 65%, var(--aero-glass-bot) 100%);
+    backdrop-filter: blur(18px) saturate(165%);
+    -webkit-backdrop-filter: blur(18px) saturate(165%);
+    border: 1px solid var(--aero-border);
+    box-shadow:
+        0 12px 32px rgba(0, 8, 16, 0.6),
+        inset 0 1px 1px rgba(255, 255, 255, 0.45),
+        inset 0 -1px 1px rgba(0, 210, 255, 0.16);
+    transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.2s ease;
+}
+
+.glass-card:hover {
+    border-color: rgba(125, 211, 252, 0.58);
+    box-shadow:
+        0 14px 36px rgba(0, 14, 26, 0.7),
+        0 0 22px rgba(0, 210, 255, 0.14),
+        inset 0 1px 1px rgba(255, 255, 255, 0.55);
+}
+
+.moon-glow {
+    box-shadow:
+        0 0 32px rgba(0, 210, 255, 0.22),
+        0 12px 32px rgba(0, 8, 16, 0.6),
+        inset 0 1px 1px rgba(255, 255, 255, 0.45);
+}
+
+.moon-border {
+    border-color: var(--aero-border);
+}
+
+/* =========================================================
+   BOTÕES GEL GLOSSY (ESTILO WINDOWS VISTA / AQUA AERO)
+   ========================================================= */
+.btn-y2k-primary {
+    background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.68) 0%, rgba(255, 255, 255, 0.22) 49%, rgba(0, 150, 199, 0.15) 50%, rgba(16, 185, 129, 0.35) 100%),
+        linear-gradient(135deg, #00c6ff 0%, #0284c7 52%, #10b981 100%);
+    color: #ffffff !important;
+    font-weight: 600;
+    border: 1px solid rgba(186, 230, 253, 0.75);
+    border-radius: 9999px;
+    box-shadow:
+        inset 0 1px 1px rgba(255, 255, 255, 0.85),
+        inset 0 -2px 4px rgba(2, 44, 67, 0.45),
+        0 4px 14px rgba(0, 198, 255, 0.35);
+    text-shadow: 0 1px 2px rgba(2, 20, 34, 0.75);
+    cursor: pointer;
+}
+
+.btn-y2k-primary:hover {
+    background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.82) 0%, rgba(255, 255, 255, 0.32) 49%, rgba(56, 189, 248, 0.2) 50%, rgba(52, 211, 153, 0.42) 100%),
+        linear-gradient(135deg, #38bdf8 0%, #0ea5e9 50%, #34d399 100%);
+    box-shadow:
+        inset 0 1px 1px rgba(255, 255, 255, 0.95),
+        0 0 20px rgba(56, 189, 248, 0.6);
+    transform: translateY(-1px);
+}
+
+.btn-y2k-primary:active {
+    transform: translateY(0);
+}
+
+/* =========================================================
+   INPUTS, SELECTS E DATAS EM VIDRO ESCURO AERO
+   ========================================================= */
+main input[type="text"],
+main input[type="number"],
+main input[type="date"],
+main select,
+#modal-feira input,
+#modal-feirante input,
+#modal-login input {
+    background: linear-gradient(180deg, rgba(2, 14, 24, 0.92) 0%, rgba(6, 26, 40, 0.88) 100%);
+    color: #f0f9ff;
+    border: 1px solid rgba(125, 211, 252, 0.32);
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.5), 0 1px 0 rgba(255, 255, 255, 0.12);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+main input:focus,
+main select:focus,
+#modal-feira input:focus,
+#modal-feirante input:focus,
+#modal-login input:focus {
+    outline: none;
+    border-color: #38bdf8;
+    box-shadow:
+        inset 0 2px 5px rgba(0, 0, 0, 0.45),
+        0 0 0 3px rgba(56, 189, 248, 0.25),
+        0 0 14px rgba(0, 210, 255, 0.3);
+}
+
+main select option {
+    background-color: #051e2e;
+    color: #f0f9ff;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(0.88) sepia(1) saturate(3) hue-rotate(170deg);
+    cursor: pointer;
+}
+
+/* =========================================================
+   TABELAS GLOSSY AERO
+   ========================================================= */
+main table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+main thead th {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.12) 0%, rgba(8, 38, 56, 0.88) 50%, rgba(4, 24, 38, 0.95) 100%);
+    color: #bae6fd;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    border-bottom: 1px solid rgba(125, 211, 252, 0.28);
+    white-space: nowrap;
+}
+
+main tbody tr {
+    transition: background-color 0.18s ease;
+}
+
+main tbody tr:hover {
+    background-color: rgba(56, 189, 248, 0.08) !important;
+}
+
+main tbody td {
+    vertical-align: middle;
+}
+
+#tabela-feirantes-feira-body button {
+    cursor: pointer;
+    border-radius: 9999px;
+    white-space: nowrap;
+}
+
+/* =========================================================
+   ORBE AERO (ESFERA DE VIDRO LÍQUIDO AQUA/ESMERALDA)
+   ========================================================= */
+.lunar-orb {
+    position: relative;
+    width: 92px;
+    height: 92px;
+    border-radius: 50%;
+    background:
+        radial-gradient(circle at 50% 82%, rgba(110, 231, 183, 0.85) 0%, transparent 45%),
+        radial-gradient(circle at 35% 30%, #e0f2fe 0%, #38bdf8 32%, #0284c7 68%, #042f49 100%);
+    border: 1px solid rgba(224, 242, 254, 0.65);
+    box-shadow:
+        0 0 35px rgba(0, 210, 255, 0.55),
+        inset 0 -8px 16px rgba(2, 24, 38, 0.75),
+        inset 0 2px 6px rgba(255, 255, 255, 0.9);
+    overflow: hidden;
+    animation: aeroOrbPulse 4.5s ease-in-out infinite alternate;
+}
+
+/* Reflexo superior brilhante estilo bolha de vidro Aero */
+.lunar-orb::before {
+    content: '';
+    position: absolute;
+    top: 6%;
+    left: 16%;
+    width: 68%;
+    height: 42%;
+    border-radius: 50%;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.88) 0%, rgba(255, 255, 255, 0.12) 100%);
+    box-shadow: none;
+}
+
+.lunar-orb i {
+    color: #ffffff !important;
+    filter: drop-shadow(0 2px 6px rgba(2, 24, 38, 0.65));
+    z-index: 2;
+}
+
+@keyframes aeroOrbPulse {
+    0% {
+        box-shadow: 0 0 26px rgba(0, 210, 255, 0.4), inset 0 -8px 16px rgba(2, 24, 38, 0.75);
+    }
+    100% {
+        box-shadow: 0 0 46px rgba(52, 211, 153, 0.65), inset 0 -6px 14px rgba(2, 24, 38, 0.65);
+    }
+}
+
+@keyframes twinkle {
+    0%, 100% {
+        opacity: 0.7;
+        transform: scale(0.95);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.06);
+    }
+}
+
+.animate-twinkle {
+    animation: twinkle 3.5s ease-in-out infinite;
+}
+
+/* =========================================================
+   BARRA DE ROLAGEM AQUA GEL
+   ========================================================= */
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #031019;
+    border-left: 1px solid rgba(125, 211, 252, 0.18);
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #38bdf8 0%, #0284c7 50%, #10b981 100%);
+    border-radius: 9999px;
+    border: 2px solid #031019;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, #7dd3fc 0%, #38bdf8 50%, #34d399 100%);
+}
+
+/* =========================================================
+   IMPRESSÃO (MANTÉM RELATÓRIO LIMPO EM FUNDO BRANCO)
+   ========================================================= */
+.print-only {
+    display: none !important;
+}
+
+@media print {
+    body {
+        background-color: #ffffff !important;
+        color: #000000 !important;
+    }
+    #space-canvas, .nebula-bg, .y2k-grid, #splash-screen, #modal-login {
+        display: none !important;
+    }
+    header, nav, footer, .no-print, button, select, input {
+        display: none !important;
+    }
+    .print-only {
+        display: block !important;
+    }
+    .max-w-7xl, main {
+        max-width: 100% !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+    #painel-feira-ativo, #tab-relatorios {
+        display: block !important;
+    }
+    .glass-card, .bg-lunar-900, .bg-lunar-800, .bg-lunar-950 {
+        background: #ffffff !important;
+        color: #000000 !important;
+        border: 1px solid #d1d5db !important;
+        box-shadow: none !important;
+        backdrop-filter: none !important;
+    }
+    .text-white, .text-gray-100, .text-gray-300, .text-gray-400, .text-slate-300, .text-slate-400 {
+        color: #111827 !important;
+    }
+    .text-yellow-400, .text-emerald-400, .text-sky-400, .text-red-400 {
+        color: #000000 !important;
+        font-weight: bold !important;
+    }
+    table {
+        width: 100% !important;
+        border-collapse: collapse !important;
+    }
+    th, td {
+        border: 1px solid #d1d5db !important;
+        padding: 8px !important;
+        color: #000000 !important;
+    }
+}
